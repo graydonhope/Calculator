@@ -1,2 +1,2 @@
 # Calculator
-Laboratory Assignment: Calculator in Android Studios (in progress)
+Laboratory Assignment: Calculator in Android Studios
