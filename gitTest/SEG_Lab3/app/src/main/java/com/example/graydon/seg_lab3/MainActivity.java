@@ -22,21 +22,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     //Called everytime a button is pressed
     public void onClickNumericalButton(View view){
         int buttonID = view.getId();
         TextView text = (TextView)findViewById(R.id.resultEdit);
         switch(buttonID){
-            case R.id.btn17:
+            case R.id.btn00:
                 text.setText(text.getText() + "0");
                 break;
-            case R.id.btn12:
+            case R.id.btn01:
                 text.setText(text.getText() + "1");
                 break;
-            case R.id.btn13:
+            case R.id.btn02:
                 text.setText(text.getText() + "2");
                 break;
-            case R.id.btn14:
+            case R.id.btn03:
                 text.setText(text.getText() + "3");
                 break;
             case R.id.btn04:
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addClick(View view){
-        operator = Operator.minus;
+        operator = Operator.add;
         EditText text = (EditText)findViewById(R.id.resultEdit);
         data1 = Double.parseDouble(text.getText().toString());
         text.setText("");
@@ -120,7 +121,12 @@ public class MainActivity extends AppCompatActivity {
             }
             operator = Operator.none;
             data1 = result;
-            text.setText(String.valueOf(result));
+            if((result - (int) result) != 0){
+                text.setText(String.valueOf(result));
+            }
+            else{
+                text.setText(String.valueOf((int)result));
+            }
         }
     }
 }
